@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2, Phone, Home } from "lucide-react";
 
 const PHONE = "9079718117";
-const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Hi, I just submitted an enquiry for the Mahadevapura apartment.")}`;
+const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Hi, I just submitted an enquiry for the Ganesh Nagar, Sirsi, Bindayaka apartment.")}`;
 
 const ThankYou = () => {
   return (
