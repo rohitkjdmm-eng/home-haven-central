@@ -50,6 +50,11 @@ const Index = () => {
                 src={heroImg}
                 alt="Luxury 3 BHK villa exterior at twilight, Ganesh Nagar Sirsi Bindayaka Jaipur"
                 className="w-full h-[420px] md:h-[560px] object-cover animate-ken-burns"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1200}
+                height={800}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
 
@@ -178,7 +183,7 @@ const Index = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img src={dayImg} alt="Premium apartment exterior with landscaping, Ganesh Nagar Sirsi Bindayaka"
-              className="rounded-2xl shadow-luxury w-full" />
+              className="rounded-2xl shadow-luxury w-full" loading="lazy" decoding="async" />
             <div className="absolute -bottom-6 -right-6 bg-gradient-gold p-5 rounded-xl shadow-gold hidden md:block">
               <p className="text-gold-foreground font-display text-2xl font-bold">₹1.25 Cr<span className="text-sm font-sans font-normal">/onwards</span></p>
             </div>
