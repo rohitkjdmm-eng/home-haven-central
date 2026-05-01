@@ -138,7 +138,6 @@ const Index = () => {
               ].map(([Icon, text]) => (
                 <li key={text as string} className="flex items-center gap-4 p-3 rounded-lg hover:bg-secondary/60 transition-smooth">
                   <div className="w-11 h-11 rounded-lg bg-gold/15 flex items-center justify-center shrink-0">
-                    {/* @ts-expect-error icon component */}
                     <Icon className="w-5 h-5 text-gold" />
                   </div>
                   <span className="font-medium text-foreground">{text as string}</span>
