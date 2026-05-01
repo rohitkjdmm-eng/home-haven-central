@@ -114,5 +114,35 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
   }
 }
+
+@layer utilities {
+  .bg-gradient-hero { background: var(--gradient-hero); }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .bg-gradient-emerald { background: var(--gradient-emerald); }
+  .shadow-luxury { box-shadow: var(--shadow-luxury); }
+  .shadow-gold { box-shadow: var(--shadow-gold); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .transition-smooth { transition: var(--transition-smooth); }
+  .text-gold { color: hsl(var(--gold)); }
+  .bg-gold { background-color: hsl(var(--gold)); }
+  .border-gold { border-color: hsl(var(--gold)); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.5); }
+  50% { box-shadow: 0 0 0 12px hsl(var(--gold) / 0); }
+}
+.animate-fade-up { animation: fade-up 0.8s ease-out both; }
+.animate-pulse-gold { animation: pulse-gold 2s infinite; }
