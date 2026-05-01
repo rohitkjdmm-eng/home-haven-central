@@ -8,6 +8,23 @@ import dayImg from "@/assets/exterior-day.jpg";
 import livingImg from "@/assets/villa-living.jpg";
 import kitchenImg from "@/assets/villa-kitchen.jpg";
 import theatreImg from "@/assets/villa-theatre.jpg";
+import flatLiving from "@/assets/flat-living.jpg";
+import flatKitchen from "@/assets/flat-kitchen.jpg";
+import flatBedroom from "@/assets/flat-bedroom.jpg";
+import flatWardrobe from "@/assets/flat-wardrobe.jpg";
+import flatBathroom from "@/assets/flat-bathroom.jpg";
+import flatWashbasin from "@/assets/flat-washbasin.jpg";
+import flatEntrance from "@/assets/flat-entrance.jpg";
+
+const flatGallery = [
+  { src: flatLiving, label: "Living Room", span: "md:col-span-2 md:row-span-2" },
+  { src: flatKitchen, label: "Modular Kitchen", span: "" },
+  { src: flatBedroom, label: "Master Bedroom", span: "" },
+  { src: flatEntrance, label: "Entrance & Stairs", span: "" },
+  { src: flatWardrobe, label: "Wardrobe Storage", span: "" },
+  { src: flatWashbasin, label: "Washbasin Area", span: "" },
+  { src: flatBathroom, label: "Premium Bathroom", span: "md:col-span-2" },
+];
 import {
   CheckCircle2, XCircle, MapPin, Phone, ShieldCheck, Sparkles, Film, Sofa,
   ChefHat, BedDouble, Car, TrendingUp, Clock, Award, FileCheck, AlertTriangle, Home as HomeIcon
@@ -193,6 +210,45 @@ const Index = () => {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Real Flat Gallery */}
+        <div className="mt-20">
+          <div className="text-center max-w-3xl mx-auto mb-10">
+            <Eyebrow><Sparkles className="w-3 h-3" /> Actual Flat Photos</Eyebrow>
+            <h3 className="font-display text-3xl md:text-4xl text-primary mt-4">
+              Take a Look <span className="text-gold">Inside</span>
+            </h3>
+            <p className="text-muted-foreground mt-2">Real photos. No edits. What you see is what you get.</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] md:auto-rows-[200px] gap-3 md:gap-4">
+            {flatGallery.map((g) => (
+              <div
+                key={g.label}
+                className={`group relative overflow-hidden rounded-xl shadow-luxury border border-gold/20 hover:border-gold/60 transition-smooth ${g.span}`}
+              >
+                <img
+                  src={g.src}
+                  alt={`${g.label} - Premium flat at Ganesh Nagar Sirsi Bindayaka`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                  <p className="text-[10px] uppercase tracking-widest text-gold font-bold">View</p>
+                  <p className="font-display text-sm md:text-lg text-background font-semibold leading-tight">{g.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-8">
+            <Button asChild variant="gold" size="lg">
+              <a href="#enquire"><Sparkles className="w-4 h-4" /> Book Free Site Visit</a>
+            </Button>
           </div>
         </div>
       </Section>
