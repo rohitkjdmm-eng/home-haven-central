@@ -50,6 +50,11 @@ const Index = () => {
                 src={heroImg}
                 alt="Luxury 3 BHK villa exterior at twilight, Ganesh Nagar Sirsi Bindayaka Jaipur"
                 className="w-full h-[420px] md:h-[560px] object-cover animate-ken-burns"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                width={1200}
+                height={800}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
 
