@@ -52,49 +52,19 @@ const Index = () => {
         <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-gold/10 blur-3xl" />
         <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-gold/10 blur-3xl" />
 
-        <div className="relative container mx-auto max-w-7xl px-4 py-10 md:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* LEFT — Image + overlays */}
-          <div className="relative animate-fade-up order-1">
-            <div className="absolute -top-3 -left-3 w-full h-full rounded-2xl border-2 border-gold/40" />
-            <div className="relative rounded-2xl overflow-hidden shadow-luxury">
-              <img
-                src={heroImg}
-                alt="Luxury 3 BHK villa exterior at twilight, Ganesh Nagar Sirsi Bindayaka Jaipur"
-                className="w-full h-[420px] md:h-[560px] object-cover animate-ken-burns"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                width={1200}
-                height={800}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
+        <div className="relative container mx-auto max-w-7xl px-4 py-8 md:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* LEFT — Gallery slider */}
+          <div className="relative animate-fade-up order-1 min-w-0">
+            <HeroGallery slides={heroSlides} />
 
-              {/* Top-left ribbon */}
-              <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-gradient-gold text-gold-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-gold flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-blink" /> Only 3 Units Left
-              </div>
-
-              {/* Bottom price badge */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
-                <div className="px-4 py-3 rounded-xl bg-background/15 border border-gold/40 backdrop-blur-md text-background">
-                  <p className="text-[10px] uppercase tracking-widest text-gold/90">Starting Price</p>
-                  <p className="font-display text-2xl md:text-3xl font-bold text-shimmer-gold">₹1.25 Cr*</p>
-                </div>
-                <div className="hidden sm:flex items-center gap-1 px-3 py-2 rounded-xl bg-background/15 border border-gold/30 backdrop-blur-md text-background text-xs">
-                  {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />)}
-                  <span className="ml-1 font-medium">500+ Families</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating stat chips */}
-            <div className="hidden md:flex absolute -bottom-5 left-1/2 -translate-x-1/2 gap-2">
+            {/* Stat chips below gallery */}
+            <div className="mt-6 flex flex-wrap justify-center gap-2">
               {[
                 [HomeIcon, "3 BHK"],
                 [Car, "2 Parking"],
                 [BedDouble, "1800+ Sq.ft"],
               ].map(([Icon, n]) => (
-                <div key={n as string} className="flex items-center gap-2 px-3 py-2 rounded-full bg-card border border-gold/30 shadow-luxury text-primary text-xs font-semibold animate-float-slow">
+                <div key={n as string} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/10 border border-gold/30 backdrop-blur-sm text-background text-xs font-semibold">
                   <Icon className="w-4 h-4 text-gold" />
                   {n as string}
                 </div>
