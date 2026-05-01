@@ -183,7 +183,7 @@ const Index = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <img src={dayImg} alt="Premium apartment exterior with landscaping, Ganesh Nagar Sirsi Bindayaka"
-              className="rounded-2xl shadow-luxury w-full" />
+              className="rounded-2xl shadow-luxury w-full" loading="lazy" decoding="async" />
             <div className="absolute -bottom-6 -right-6 bg-gradient-gold p-5 rounded-xl shadow-gold hidden md:block">
               <p className="text-gold-foreground font-display text-2xl font-bold">₹1.25 Cr<span className="text-sm font-sans font-normal">/onwards</span></p>
             </div>
