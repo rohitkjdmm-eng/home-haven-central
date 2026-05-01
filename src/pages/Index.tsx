@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const PHONE = "9079718117";
-const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Hi, I'm interested in the premium apartment on Old Madras Road, Mahadevapura.")}`;
+const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Hi, I'm interested in the premium apartment at Ganesh Nagar, Sirsi, Bindayaka.")}`;
 
 const Section = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
   <section className={`py-16 md:py-24 px-4 ${className}`}>
@@ -30,7 +30,7 @@ const Index = () => {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Premium apartment exterior at night, Mahadevapura" className="w-full h-full object-cover" />
+          <img src={heroImg} alt="Premium apartment exterior at night, Ganesh Nagar Sirsi Bindayaka" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-hero" />
         </div>
 
@@ -38,7 +38,7 @@ const Index = () => {
           <div className="text-background animate-fade-up">
             <Eyebrow><Sparkles className="w-3 h-3" /> Most Premium Apartment</Eyebrow>
             <h1 className="font-display text-4xl md:text-6xl font-bold mt-6 leading-[1.05]">
-              Premium Apartments on <span className="text-gold">Old Madras Road</span>, Mahadevapura
+              Premium Apartments at <span className="text-gold">Ganesh Nagar</span>, Sirsi, Bindayaka
             </h1>
             <p className="mt-5 text-lg md:text-xl text-background/80 max-w-xl">
               Buy Now — Very Limited Inventories Left. Fully furnished, JDA & RERA approved township in a high-growth corridor.
@@ -114,7 +114,7 @@ const Index = () => {
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <img src={dayImg} alt="Premium apartment exterior with landscaping, Mahadevapura"
+            <img src={dayImg} alt="Premium apartment exterior with landscaping, Ganesh Nagar Sirsi Bindayaka"
               className="rounded-2xl shadow-luxury w-full" />
             <div className="absolute -bottom-6 -right-6 bg-gradient-gold p-5 rounded-xl shadow-gold hidden md:block">
               <p className="text-gold-foreground font-display text-2xl font-bold">₹1.25 Cr<span className="text-sm font-sans font-normal">/onwards</span></p>
@@ -157,7 +157,7 @@ const Index = () => {
               Prime Location = <span className="text-gold">Future Growth</span>
             </h2>
             <p className="mt-4 text-primary-foreground/80 text-lg flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-gold" /> Old Madras Road, Mahadevapura
+              <MapPin className="w-5 h-5 text-gold" /> Ganesh Nagar, Sirsi, Bindayaka, Jaipur
             </p>
             <ul className="mt-8 space-y-3">
               {["High Demand Area", "Excellent Connectivity", "Peaceful + Premium Living", "Strong Investment Potential"].map(t => (
@@ -168,13 +168,13 @@ const Index = () => {
             </ul>
           </div>
           <Card className="p-8 bg-background/5 backdrop-blur border-background/20 text-primary-foreground">
-            <h3 className="font-display text-2xl mb-6">Why Mahadevapura?</h3>
+            <h3 className="font-display text-2xl mb-6">Why Sirsi, Bindayaka?</h3>
             <div className="grid grid-cols-2 gap-6">
               {[
-                ["10 min", "Whitefield Tech Park"],
-                ["15 min", "ITPL & EPIP"],
-                ["20 min", "KR Puram Metro"],
-                ["5 min", "Top Schools & Malls"],
+                ["10 min", "Vaishali Nagar"],
+                ["15 min", "Heerapura & Ajmer Road"],
+                ["20 min", "Jaipur Railway Station"],
+                ["5 min", "Top Schools & Markets"],
               ].map(([n, l]) => (
                 <div key={l}>
                   <p className="font-display text-3xl text-gold">{n}</p>
@@ -279,7 +279,7 @@ const Index = () => {
 
       {/* FOOTER */}
       <footer className="bg-primary/95 text-primary-foreground/70 py-8 text-center text-sm">
-        <p>© {new Date().getFullYear()} Premium Apartments • Mahadevapura, Bengaluru</p>
+        <p>© {new Date().getFullYear()} Premium Apartments • Ganesh Nagar, Sirsi, Bindayaka, Jaipur</p>
         <p className="mt-1">Call / WhatsApp: <a href={`tel:${PHONE}`} className="text-gold font-semibold">{PHONE}</a></p>
       </footer>
 
