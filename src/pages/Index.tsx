@@ -36,108 +36,114 @@ const Index = () => {
       </div>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="Luxury 3 BHK villa exterior at twilight, Ganesh Nagar Sirsi Bindayaka"
-            className="w-full h-full object-cover animate-ken-burns"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
-        </div>
+      <section className="relative bg-gradient-to-br from-primary via-primary to-[hsl(158_50%_12%)] overflow-hidden">
+        {/* decorative gold blobs */}
+        <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-gold/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-gold/10 blur-3xl" />
 
-        <div className="relative container mx-auto max-w-6xl px-4 py-16 md:py-20 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-background animate-fade-up">
-            <Eyebrow><Sparkles className="w-3 h-3" /> Most Premium Villa</Eyebrow>
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mt-6 leading-[1.02]">
-              <span className="text-shimmer-gold">Luxury</span> 3 BHK<br/>
-              Villa <span className="italic font-medium">For Sale</span>
-            </h1>
-            <div className="gold-divider w-24 my-5" />
-            <p className="flex items-center gap-2 text-base md:text-lg text-background/90">
-              <MapPin className="w-5 h-5 text-gold" />
-              Ganesh Nagar, Sirsi, Bindayaka, Jaipur
-            </p>
+        <div className="relative container mx-auto max-w-7xl px-4 py-10 md:py-16 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* LEFT — Image + overlays */}
+          <div className="relative animate-fade-up order-1">
+            <div className="absolute -top-3 -left-3 w-full h-full rounded-2xl border-2 border-gold/40" />
+            <div className="relative rounded-2xl overflow-hidden shadow-luxury">
+              <img
+                src={heroImg}
+                alt="Luxury 3 BHK villa exterior at twilight, Ganesh Nagar Sirsi Bindayaka Jaipur"
+                className="w-full h-[420px] md:h-[560px] object-cover animate-ken-burns"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent" />
 
-            <div className="mt-7 flex flex-wrap gap-2">
+              {/* Top-left ribbon */}
+              <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-gradient-gold text-gold-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest shadow-gold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-blink" /> Only 3 Units Left
+              </div>
+
+              {/* Bottom price badge */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-3">
+                <div className="px-4 py-3 rounded-xl bg-background/15 border border-gold/40 backdrop-blur-md text-background">
+                  <p className="text-[10px] uppercase tracking-widest text-gold/90">Starting Price</p>
+                  <p className="font-display text-2xl md:text-3xl font-bold text-shimmer-gold">₹1.25 Cr*</p>
+                </div>
+                <div className="hidden sm:flex items-center gap-1 px-3 py-2 rounded-xl bg-background/15 border border-gold/30 backdrop-blur-md text-background text-xs">
+                  {[1,2,3,4,5].map(i => <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />)}
+                  <span className="ml-1 font-medium">500+ Families</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating stat chips */}
+            <div className="hidden md:flex absolute -bottom-5 left-1/2 -translate-x-1/2 gap-2">
               {[
-                [Sofa, "Fully Furnished"],
-                [Film, "Mini Theatre"],
-                [ShieldCheck, "JDA & RERA"],
-                [MapPin, "Prime Location"],
-              ].map(([Icon, t]) => (
-                <div key={t as string} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/10 border border-gold/30 backdrop-blur text-xs md:text-sm">
-                  <Icon className="w-3.5 h-3.5 text-gold" />
-                  <span className="text-background/95 font-medium">{t as string}</span>
+                [HomeIcon, "3 BHK"],
+                [Car, "2 Parking"],
+                [BedDouble, "1800+ Sq.ft"],
+              ].map(([Icon, n]) => (
+                <div key={n as string} className="flex items-center gap-2 px-3 py-2 rounded-full bg-card border border-gold/30 shadow-luxury text-primary text-xs font-semibold animate-float-slow">
+                  <Icon className="w-4 h-4 text-gold" />
+                  {n as string}
                 </div>
               ))}
             </div>
+          </div>
 
-            <div className="mt-7 inline-flex items-center gap-4 px-5 py-3 rounded-xl bg-background/10 border border-gold/40 backdrop-blur">
-              <div>
-                <p className="text-[10px] uppercase tracking-widest text-gold/90">Starting Price</p>
-                <p className="font-display text-3xl md:text-4xl font-bold text-shimmer-gold">₹1.25 Cr*</p>
-              </div>
-              <div className="h-10 w-px bg-gold/30" />
-              <div>
-                <p className="text-[10px] uppercase tracking-widest text-background/70">EMI From</p>
-                <p className="font-display text-xl md:text-2xl text-background font-semibold">₹95K/mo</p>
+          {/* RIGHT — Headline + Form */}
+          <div className="order-2 animate-fade-up">
+            <div className="text-background mb-6">
+              <Eyebrow><Sparkles className="w-3 h-3" /> Most Premium Villa</Eyebrow>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mt-4 leading-[1.05]">
+                <span className="text-shimmer-gold">Luxury</span> 3 BHK<br/>
+                Villa <span className="italic font-medium">For Sale</span>
+              </h1>
+              <div className="gold-divider w-20 my-4" />
+              <p className="flex items-center gap-2 text-sm md:text-base text-background/90">
+                <MapPin className="w-4 h-4 text-gold" />
+                Ganesh Nagar, Sirsi, Bindayaka, Jaipur
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {[
+                  [Sofa, "Fully Furnished"],
+                  [Film, "Mini Theatre"],
+                  [ShieldCheck, "JDA & RERA"],
+                ].map(([Icon, t]) => (
+                  <div key={t as string} className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/10 border border-gold/30 text-xs text-background/95">
+                    <Icon className="w-3 h-3 text-gold" />
+                    {t as string}
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild variant="gold" size="xl" className="animate-pulse-gold">
-                <a href={`tel:${PHONE}`}><Phone className="w-4 h-4" /> Call {PHONE}</a>
+            <Card id="enquire" className="relative p-6 md:p-7 shadow-luxury border-gold/30 bg-card">
+              <div className="absolute -top-3 left-6 px-4 py-1 rounded-full bg-gradient-gold text-gold-foreground text-[10px] font-bold uppercase tracking-widest shadow-gold">
+                ⚡ Free Site Visit
+              </div>
+              <div className="mb-5 mt-1">
+                <h2 className="font-display text-xl md:text-2xl text-primary">Check Availability</h2>
+                <p className="text-xs text-muted-foreground mt-1">Get exact location + floor plan instantly</p>
+              </div>
+              <PropertyForm
+                buttonLabel="Check Availability Now"
+                extraField={{ name: "extra", label: "Preferred Visit Date", type: "date" }}
+              />
+              <div className="mt-4 flex items-center justify-between gap-2 text-xs">
+                <p className="text-muted-foreground flex items-center gap-1">
+                  <ShieldCheck className="w-3 h-3 text-gold" /> 100% confidential
+                </p>
+                <a href={`tel:${PHONE}`} className="text-primary font-semibold flex items-center gap-1 hover:text-gold transition-smooth">
+                  <Phone className="w-3 h-3" /> {PHONE}
+                </a>
+              </div>
+            </Card>
+
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Button asChild variant="gold" size="lg" className="animate-pulse-gold flex-1 min-w-[160px]">
+                <a href={`tel:${PHONE}`}><Phone className="w-4 h-4" /> Call Now</a>
               </Button>
-              <Button asChild variant="whatsapp" size="xl">
+              <Button asChild variant="whatsapp" size="lg" className="flex-1 min-w-[160px]">
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
               </Button>
             </div>
-
-            <div className="mt-6 flex items-center gap-4 text-background/80 text-sm">
-              <div className="flex items-center gap-1">
-                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-gold text-gold" />)}
-              </div>
-              <span>Trusted by <span className="text-gold font-semibold">500+ Happy Families</span></span>
-            </div>
           </div>
-
-          {/* Form Card */}
-          <Card id="enquire" className="relative p-6 md:p-8 shadow-luxury border-gold/30 bg-card/95 backdrop-blur-md animate-fade-up">
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-gold text-gold-foreground text-xs font-bold uppercase tracking-widest shadow-gold">
-              ⚡ Free Site Visit
-            </div>
-            <div className="text-center mb-6 mt-2">
-              <h2 className="font-display text-2xl md:text-3xl text-primary">Check Availability</h2>
-              <div className="gold-divider w-16 mx-auto my-3" />
-              <p className="text-sm text-muted-foreground">Get exact location + floor plan instantly</p>
-            </div>
-            <PropertyForm
-              buttonLabel="Check Availability Now"
-              extraField={{ name: "extra", label: "Preferred Visit Date", type: "date" }}
-            />
-            <p className="mt-4 text-center text-xs text-muted-foreground flex items-center justify-center gap-1">
-              <ShieldCheck className="w-3 h-3 text-gold" /> 100% confidential. No spam calls.
-            </p>
-          </Card>
-        </div>
-
-        {/* Floating villa stats */}
-        <div className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 gap-3 z-10">
-          {[
-            [HomeIcon, "3 BHK", "Spacious"],
-            [Car, "2 Car", "Parking"],
-            [BedDouble, "1800+", "Sq.ft"],
-          ].map(([Icon, n, l]) => (
-            <div key={l as string} className="flex items-center gap-3 px-5 py-3 rounded-xl bg-background/10 border border-gold/30 backdrop-blur-md text-background animate-float-slow">
-              <Icon className="w-5 h-5 text-gold" />
-              <div>
-                <p className="font-display text-lg leading-none font-bold">{n as string}</p>
-                <p className="text-[10px] uppercase tracking-wider text-background/70">{l as string}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
