@@ -2,11 +2,11 @@ import { PropertyForm } from "@/components/PropertyForm";
 import { ExitPopup } from "@/components/ExitPopup";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import heroImg from "@/assets/hero-night.jpg";
+import heroImg from "@/assets/hero-villa.png";
 import dayImg from "@/assets/exterior-day.jpg";
 import {
   CheckCircle2, XCircle, MapPin, Phone, ShieldCheck, Sparkles, Film, Sofa,
-  ChefHat, BedDouble, Car, TrendingUp, Clock, Award, FileCheck, AlertTriangle
+  ChefHat, BedDouble, Car, TrendingUp, Clock, Award, FileCheck, AlertTriangle, Star, Home as HomeIcon
 } from "lucide-react";
 
 const PHONE = "9079718117";
@@ -27,37 +27,64 @@ const Eyebrow = ({ children }: { children: React.ReactNode }) => (
 const Index = () => {
   return (
     <main className="min-h-screen bg-background">
+      {/* TOP ANNOUNCEMENT BAR */}
+      <div className="bg-gradient-emerald text-primary-foreground text-xs md:text-sm py-2 px-4 text-center">
+        <span className="inline-flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-gold animate-blink" />
+          🔥 Festive Offer Live — Only <span className="text-gold font-bold">3 Units Left</span> at Launch Price
+        </span>
+      </div>
+
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg} alt="Premium apartment exterior at night, Ganesh Nagar Sirsi Bindayaka" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-hero" />
+          <img
+            src={heroImg}
+            alt="Luxury 3 BHK villa exterior at twilight, Ganesh Nagar Sirsi Bindayaka"
+            className="w-full h-full object-cover animate-ken-burns"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
         </div>
 
-        <div className="relative container mx-auto max-w-6xl px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative container mx-auto max-w-6xl px-4 py-16 md:py-20 grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-background animate-fade-up">
-            <Eyebrow><Sparkles className="w-3 h-3" /> Most Premium Apartment</Eyebrow>
-            <h1 className="font-display text-4xl md:text-6xl font-bold mt-6 leading-[1.05]">
-              Premium Apartments at <span className="text-gold">Ganesh Nagar</span>, Sirsi, Bindayaka
+            <Eyebrow><Sparkles className="w-3 h-3" /> Most Premium Villa</Eyebrow>
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mt-6 leading-[1.02]">
+              <span className="text-shimmer-gold">Luxury</span> 3 BHK<br/>
+              Villa <span className="italic font-medium">For Sale</span>
             </h1>
-            <p className="mt-5 text-lg md:text-xl text-background/80 max-w-xl">
-              Buy Now — Very Limited Inventories Left. Fully furnished, JDA & RERA approved township in a high-growth corridor.
+            <div className="gold-divider w-24 my-5" />
+            <p className="flex items-center gap-2 text-base md:text-lg text-background/90">
+              <MapPin className="w-5 h-5 text-gold" />
+              Ganesh Nagar, Sirsi, Bindayaka, Jaipur
             </p>
 
-            <ul className="mt-8 grid sm:grid-cols-2 gap-3 text-background/95">
+            <div className="mt-7 flex flex-wrap gap-2">
               {[
-                ["✅", "JDA & RERA Approved Township"],
-                ["🌳", "Prime Location – High Growth"],
-                ["✨", "Fully Furnished"],
-                ["🎬", "Private Mini Theatre"],
-                ["🏡", "Premium Lifestyle Living"],
-                ["💰", "Starting ₹1.25 Cr"],
-              ].map(([emoji, text]) => (
-                <li key={text} className="flex items-start gap-2 text-sm md:text-base">
-                  <span>{emoji}</span><span>{text}</span>
-                </li>
+                [Sofa, "Fully Furnished"],
+                [Film, "Mini Theatre"],
+                [ShieldCheck, "JDA & RERA"],
+                [MapPin, "Prime Location"],
+              ].map(([Icon, t]) => (
+                <div key={t as string} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/10 border border-gold/30 backdrop-blur text-xs md:text-sm">
+                  <Icon className="w-3.5 h-3.5 text-gold" />
+                  <span className="text-background/95 font-medium">{t as string}</span>
+                </div>
               ))}
-            </ul>
+            </div>
+
+            <div className="mt-7 inline-flex items-center gap-4 px-5 py-3 rounded-xl bg-background/10 border border-gold/40 backdrop-blur">
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-gold/90">Starting Price</p>
+                <p className="font-display text-3xl md:text-4xl font-bold text-shimmer-gold">₹1.25 Cr*</p>
+              </div>
+              <div className="h-10 w-px bg-gold/30" />
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-background/70">EMI From</p>
+                <p className="font-display text-xl md:text-2xl text-background font-semibold">₹95K/mo</p>
+              </div>
+            </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="gold" size="xl" className="animate-pulse-gold">
@@ -67,20 +94,50 @@ const Index = () => {
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
               </Button>
             </div>
+
+            <div className="mt-6 flex items-center gap-4 text-background/80 text-sm">
+              <div className="flex items-center gap-1">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-gold text-gold" />)}
+              </div>
+              <span>Trusted by <span className="text-gold font-semibold">500+ Happy Families</span></span>
+            </div>
           </div>
 
           {/* Form Card */}
-          <Card id="enquire" className="p-6 md:p-8 shadow-luxury border-gold/20 bg-card/95 backdrop-blur animate-fade-up">
-            <div className="text-center mb-6">
-              <Eyebrow>⚡ Book Your Site Visit</Eyebrow>
-              <h2 className="font-display text-2xl md:text-3xl text-primary mt-3">Check Availability</h2>
-              <p className="text-sm text-muted-foreground mt-1">Get full details + exact location</p>
+          <Card id="enquire" className="relative p-6 md:p-8 shadow-luxury border-gold/30 bg-card/95 backdrop-blur-md animate-fade-up">
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-gold text-gold-foreground text-xs font-bold uppercase tracking-widest shadow-gold">
+              ⚡ Free Site Visit
+            </div>
+            <div className="text-center mb-6 mt-2">
+              <h2 className="font-display text-2xl md:text-3xl text-primary">Check Availability</h2>
+              <div className="gold-divider w-16 mx-auto my-3" />
+              <p className="text-sm text-muted-foreground">Get exact location + floor plan instantly</p>
             </div>
             <PropertyForm
               buttonLabel="Check Availability Now"
               extraField={{ name: "extra", label: "Preferred Visit Date", type: "date" }}
             />
+            <p className="mt-4 text-center text-xs text-muted-foreground flex items-center justify-center gap-1">
+              <ShieldCheck className="w-3 h-3 text-gold" /> 100% confidential. No spam calls.
+            </p>
           </Card>
+        </div>
+
+        {/* Floating villa stats */}
+        <div className="hidden lg:flex absolute bottom-8 left-1/2 -translate-x-1/2 gap-3 z-10">
+          {[
+            [HomeIcon, "3 BHK", "Spacious"],
+            [Car, "2 Car", "Parking"],
+            [BedDouble, "1800+", "Sq.ft"],
+          ].map(([Icon, n, l]) => (
+            <div key={l as string} className="flex items-center gap-3 px-5 py-3 rounded-xl bg-background/10 border border-gold/30 backdrop-blur-md text-background animate-float-slow">
+              <Icon className="w-5 h-5 text-gold" />
+              <div>
+                <p className="font-display text-lg leading-none font-bold">{n as string}</p>
+                <p className="text-[10px] uppercase tracking-wider text-background/70">{l as string}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
