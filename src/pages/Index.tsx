@@ -1,13 +1,24 @@
 import { PropertyForm } from "@/components/PropertyForm";
 import { ExitPopup } from "@/components/ExitPopup";
+import { HeroGallery } from "@/components/HeroGallery";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import heroImg from "@/assets/hero-villa.png";
 import dayImg from "@/assets/exterior-day.jpg";
+import livingImg from "@/assets/villa-living.jpg";
+import kitchenImg from "@/assets/villa-kitchen.jpg";
+import theatreImg from "@/assets/villa-theatre.jpg";
 import {
   CheckCircle2, XCircle, MapPin, Phone, ShieldCheck, Sparkles, Film, Sofa,
-  ChefHat, BedDouble, Car, TrendingUp, Clock, Award, FileCheck, AlertTriangle, Star, Home as HomeIcon
+  ChefHat, BedDouble, Car, TrendingUp, Clock, Award, FileCheck, AlertTriangle, Home as HomeIcon
 } from "lucide-react";
+
+const heroSlides = [
+  { src: heroImg, alt: "Luxury 3 BHK villa exterior at twilight, Ganesh Nagar Sirsi Bindayaka", label: "Exterior" },
+  { src: livingImg, alt: "Designer living room interior", label: "Living Room" },
+  { src: kitchenImg, alt: "Modular kitchen with island", label: "Modular Kitchen" },
+  { src: theatreImg, alt: "Private mini theatre", label: "Mini Theatre" },
+];
 
 const PHONE = "9079718117";
 const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Hi, I'm interested in the premium apartment at Ganesh Nagar, Sirsi, Bindayaka.")}`;
