@@ -8,6 +8,23 @@ import dayImg from "@/assets/exterior-day.jpg";
 import livingImg from "@/assets/villa-living.jpg";
 import kitchenImg from "@/assets/villa-kitchen.jpg";
 import theatreImg from "@/assets/villa-theatre.jpg";
+import flatLiving from "@/assets/flat-living.jpg";
+import flatKitchen from "@/assets/flat-kitchen.jpg";
+import flatBedroom from "@/assets/flat-bedroom.jpg";
+import flatWardrobe from "@/assets/flat-wardrobe.jpg";
+import flatBathroom from "@/assets/flat-bathroom.jpg";
+import flatWashbasin from "@/assets/flat-washbasin.jpg";
+import flatEntrance from "@/assets/flat-entrance.jpg";
+
+const flatGallery = [
+  { src: flatLiving, label: "Living Room", span: "md:col-span-2 md:row-span-2" },
+  { src: flatKitchen, label: "Modular Kitchen", span: "" },
+  { src: flatBedroom, label: "Master Bedroom", span: "" },
+  { src: flatEntrance, label: "Entrance & Stairs", span: "" },
+  { src: flatWardrobe, label: "Wardrobe Storage", span: "" },
+  { src: flatWashbasin, label: "Washbasin Area", span: "" },
+  { src: flatBathroom, label: "Premium Bathroom", span: "md:col-span-2" },
+];
 import {
   CheckCircle2, XCircle, MapPin, Phone, ShieldCheck, Sparkles, Film, Sofa,
   ChefHat, BedDouble, Car, TrendingUp, Clock, Award, FileCheck, AlertTriangle, Home as HomeIcon
