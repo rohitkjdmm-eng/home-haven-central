@@ -15,12 +15,16 @@ import flatWardrobe from "@/assets/flat-wardrobe.jpg";
 import flatBathroom from "@/assets/flat-bathroom.jpg";
 import flatWashbasin from "@/assets/flat-washbasin.jpg";
 import flatEntrance from "@/assets/flat-entrance.jpg";
+import flatTheatre from "@/assets/flat-theatre.jpg";
+import flatHall from "@/assets/flat-hall.jpg";
 
 const flatGallery = [
-  { src: flatLiving, label: "Living Room", span: "md:col-span-2 md:row-span-2" },
+  { src: flatTheatre, label: "Mini Theatre", span: "md:col-span-2 md:row-span-2" },
+  { src: flatLiving, label: "Living Room", span: "" },
+  { src: flatHall, label: "Hall & Stairs", span: "" },
   { src: flatKitchen, label: "Modular Kitchen", span: "" },
   { src: flatBedroom, label: "Master Bedroom", span: "" },
-  { src: flatEntrance, label: "Entrance & Stairs", span: "" },
+  { src: flatEntrance, label: "Entrance", span: "" },
   { src: flatWardrobe, label: "Wardrobe Storage", span: "" },
   { src: flatWashbasin, label: "Washbasin Area", span: "" },
   { src: flatBathroom, label: "Premium Bathroom", span: "md:col-span-2" },
