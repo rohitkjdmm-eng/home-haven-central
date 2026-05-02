@@ -133,15 +133,15 @@ const Index = () => {
                 <p className="text-muted-foreground flex items-center gap-1">
                   <ShieldCheck className="w-3 h-3 text-gold" /> 100% confidential
                 </p>
-                <a href={`tel:${PHONE}`} className="text-primary font-semibold flex items-center gap-1 hover:text-gold transition-smooth">
-                  <Phone className="w-3 h-3" /> {PHONE}
-                </a>
+                <p className="text-muted-foreground flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-gold" /> RERA verified
+                </p>
               </div>
             </Card>
 
             <div className="mt-5 flex flex-wrap gap-3">
               <Button asChild variant="gold" size="lg" className="animate-pulse-gold flex-1 min-w-[160px]">
-                <a href={`tel:${PHONE}`}><Phone className="w-4 h-4" /> Call Now</a>
+                <a href="#enquire"><Sparkles className="w-4 h-4" /> Enquire Now</a>
               </Button>
               <Button asChild variant="whatsapp" size="lg" className="flex-1 min-w-[160px]">
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
@@ -364,7 +364,7 @@ const Index = () => {
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="gold" size="xl">
-                <a href={`tel:${PHONE}`}><Phone className="w-4 h-4" /> Call {PHONE}</a>
+                <a href="#enquire"><Sparkles className="w-4 h-4" /> Enquire Now</a>
               </Button>
               <Button asChild variant="whatsapp" size="xl">
                 <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp Now</a>
@@ -372,18 +372,20 @@ const Index = () => {
             </div>
           </div>
 
-          <Card className="p-6 md:p-8 shadow-luxury border-gold/30 bg-card">
+          <Card id="enquire" className="p-6 md:p-8 shadow-luxury border-gold/30 bg-card scroll-mt-24">
             <h3 className="font-display text-2xl text-primary mb-1">Book Site Visit</h3>
-            <p className="text-sm text-muted-foreground mb-5">Reserve your slot today.</p>
+            <p className="text-sm text-muted-foreground mb-5">Reserve your private slot today.</p>
             <PropertyForm buttonLabel="Submit" />
           </Card>
         </div>
       </Section>
 
       {/* FOOTER */}
-      <footer className="bg-primary/95 text-primary-foreground/70 py-8 text-center text-sm">
-        <p>© {new Date().getFullYear()} Premium Apartments • Ganesh Nagar, Sirsi, Bindayaka, Jaipur</p>
-        <p className="mt-1">Call / WhatsApp: <a href={`tel:${PHONE}`} className="text-gold font-semibold">{PHONE}</a></p>
+      <footer className="bg-primary/95 text-primary-foreground/70 py-10 text-center text-sm border-t border-gold/20">
+        <div className="gold-divider w-32 mx-auto mb-5" />
+        <p className="font-display text-base text-gold tracking-wide">Premium Apartments</p>
+        <p className="mt-2">Ganesh Nagar, Sirsi, Bindayaka, Jaipur</p>
+        <p className="mt-3 text-xs text-primary-foreground/50">© {new Date().getFullYear()} • All Rights Reserved • RERA Verified Property</p>
       </footer>
 
       {/* Floating WhatsApp */}
