@@ -128,7 +128,7 @@ const Index = () => {
                 <h2 className="font-display text-xl md:text-2xl text-primary">Check Availability</h2>
                 <p className="text-xs text-muted-foreground mt-1">Get exact location + floor plan instantly</p>
               </div>
-              <PropertyForm buttonLabel="Check Availability Now" />
+              <PropertyForm buttonLabel="Submit" />
               <div className="mt-4 flex items-center justify-between gap-2 text-xs">
                 <p className="text-muted-foreground flex items-center gap-1">
                   <ShieldCheck className="w-3 h-3 text-gold" /> 100% confidential
@@ -375,7 +375,7 @@ const Index = () => {
           <Card className="p-6 md:p-8 shadow-luxury border-gold/30 bg-card">
             <h3 className="font-display text-2xl text-primary mb-1">Book Site Visit</h3>
             <p className="text-sm text-muted-foreground mb-5">Reserve your slot today.</p>
-            <PropertyForm buttonLabel="Check Availability Now" />
+            <PropertyForm buttonLabel="Submit" />
           </Card>
         </div>
       </Section>
