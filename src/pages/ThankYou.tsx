@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle2, Phone, Home } from "lucide-react";
+import { CheckCircle2, Home } from "lucide-react";
 
 const PHONE = "9079718117";
 const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Hi, I just submitted an enquiry for the Ganesh Nagar, Sirsi, Bindayaka apartment.")}`;
@@ -40,9 +40,6 @@ const ThankYou = () => {
             </Button>
             <Button asChild variant="whatsapp" size="xl">
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-            </Button>
-            <Button asChild variant="gold" size="xl">
-              <a href={`tel:${PHONE}`}><Phone className="w-4 h-4" /> Call {PHONE}</a>
             </Button>
           </div>
         </div>
