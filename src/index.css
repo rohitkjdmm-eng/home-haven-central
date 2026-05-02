@@ -130,22 +130,33 @@
   .bg-gradient-hero { background: var(--gradient-hero); }
   .bg-gradient-gold { background: var(--gradient-gold); }
   .bg-gradient-emerald { background: var(--gradient-emerald); }
+  .bg-gradient-luxury-card { background: var(--gradient-luxury-card); }
   .shadow-luxury { box-shadow: var(--shadow-luxury); }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .transition-smooth { transition: var(--transition-smooth); }
   .text-gold { color: hsl(var(--gold)); }
   .bg-gold { background-color: hsl(var(--gold)); }
   .border-gold { border-color: hsl(var(--gold)); }
+  .luxury-grain {
+    background-image: radial-gradient(hsl(var(--gold) / 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .glass-card {
+    background: linear-gradient(145deg, hsl(0 0% 100% / 0.95), hsl(40 30% 97% / 0.85));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.5); }
-  50% { box-shadow: 0 0 0 12px hsl(var(--gold) / 0); }
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--gold) / 0.55), var(--shadow-gold); }
+  50% { box-shadow: 0 0 0 14px hsl(var(--gold) / 0), var(--shadow-gold); }
 }
 @keyframes shimmer {
   0% { background-position: -200% 0; }
@@ -163,20 +174,36 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
-.animate-fade-up { animation: fade-up 0.8s ease-out both; }
-.animate-pulse-gold { animation: pulse-gold 2s infinite; }
+.animate-fade-up { animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.animate-pulse-gold { animation: pulse-gold 2.2s infinite; }
 .animate-float-slow { animation: float-slow 4s ease-in-out infinite; }
 .animate-ken-burns { animation: ken-burns 18s ease-in-out infinite alternate; }
 .animate-blink { animation: blink-dot 1.4s ease-in-out infinite; }
 .text-shimmer-gold {
-  background: linear-gradient(90deg, hsl(var(--gold)) 0%, hsl(42 90% 80%) 50%, hsl(var(--gold)) 100%);
+  background: linear-gradient(90deg, hsl(var(--gold)) 0%, hsl(45 95% 82%) 50%, hsl(var(--gold)) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
+  animation: shimmer 3.5s linear infinite;
 }
 .gold-divider {
   height: 2px;
   background: linear-gradient(90deg, transparent, hsl(var(--gold)), transparent);
+}
+.gold-divider-ornate {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.6), transparent);
+}
+.gold-divider-ornate::before {
+  content: "❖";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: hsl(var(--gold));
+  background: hsl(var(--background));
+  padding: 0 12px;
+  font-size: 12px;
 }
