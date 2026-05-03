@@ -85,7 +85,7 @@ const Index = () => {
               {[
                 [HomeIcon, "3 BHK"],
                 [Car, "2 Parking"],
-                [BedDouble, "1800+ Sq.ft"],
+                [BedDouble, "20 × 50 ft (1000 Sq.ft)"],
               ].map(([Icon, n]) => (
                 <div key={n as string} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/10 border border-gold/30 backdrop-blur-sm text-background text-xs font-semibold">
                   <Icon className="w-4 h-4 text-gold" />
