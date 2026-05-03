@@ -61,10 +61,28 @@ export const PropertyForm = ({ buttonLabel, variant = "primary", compact }: Prop
       return;
     }
     setLoading(true);
-    setTimeout(() => {
+    try {
+      await fetch("https://hook.eu1.make.com/owpby9cwk2bxojmitdujj9wgkmiu0doq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          buyingFor,
+          budget,
+          timeline,
+          visitDate: visitDate ? format(visitDate, "yyyy-MM-dd") : "",
+          visitTime,
+          submittedAt: new Date().toISOString(),
+          source: window.location.href,
+        }),
+      });
+    } catch (err) {
+      console.error("Webhook error", err);
+    } finally {
       setLoading(false);
       navigate("/thank-you");
-    }, 600);
+    }
   };
 
   return (
