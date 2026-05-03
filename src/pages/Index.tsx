@@ -385,9 +385,10 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="bg-primary/95 text-primary-foreground/70 py-10 text-center text-sm border-t border-gold/20">
         <div className="gold-divider w-32 mx-auto mb-5" />
-        <p className="font-display text-base text-gold tracking-wide">Premium Apartments</p>
+        <p className="font-display text-base text-gold tracking-wide">EIGENTUM SPACES</p>
+        <p className="mt-1 text-xs uppercase tracking-widest text-primary-foreground/60">Premium Apartments • Size 20 × 50 ft</p>
         <p className="mt-2">Ganesh Nagar, Sirsi, Bindayaka, Jaipur</p>
-        <p className="mt-3 text-xs text-primary-foreground/50">© {new Date().getFullYear()} • All Rights Reserved • RERA Verified Property</p>
+        <p className="mt-3 text-xs text-primary-foreground/50">© {new Date().getFullYear()} Eigentum Spaces • All Rights Reserved • RERA Verified Property</p>
       </footer>
 
       {/* Floating WhatsApp */}
