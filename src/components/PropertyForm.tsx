@@ -53,7 +53,7 @@ export const PropertyForm = ({ buttonLabel, variant = "primary", compact }: Prop
     : "border-border text-foreground hover:border-gold hover:text-gold";
   const chipActive = "border-gold bg-gold/15 text-gold font-semibold";
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse({ name, phone, buyingFor, budget, timeline, visitDate, visitTime });
     if (!result.success) {
