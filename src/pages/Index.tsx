@@ -61,7 +61,9 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       {/* TOP ANNOUNCEMENT BAR */}
       <div className="bg-gradient-emerald text-primary-foreground text-xs md:text-sm py-2 px-4 text-center">
-        <span className="inline-flex items-center gap-2">
+        <span className="inline-flex items-center gap-2 flex-wrap justify-center">
+          <span className="font-display text-gold font-bold tracking-wider">EIGENTUM SPACES</span>
+          <span className="opacity-50">|</span>
           <span className="w-2 h-2 rounded-full bg-gold animate-blink" />
           🔥 Festive Offer Live — Only <span className="text-gold font-bold">3 Units Left</span> at Launch Price
         </span>
@@ -83,7 +85,7 @@ const Index = () => {
               {[
                 [HomeIcon, "3 BHK"],
                 [Car, "2 Parking"],
-                [BedDouble, "1800+ Sq.ft"],
+                [BedDouble, "20 × 50 ft (1000 Sq.ft)"],
               ].map(([Icon, n]) => (
                 <div key={n as string} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-background/10 border border-gold/30 backdrop-blur-sm text-background text-xs font-semibold">
                   <Icon className="w-4 h-4 text-gold" />
@@ -383,9 +385,10 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="bg-primary/95 text-primary-foreground/70 py-10 text-center text-sm border-t border-gold/20">
         <div className="gold-divider w-32 mx-auto mb-5" />
-        <p className="font-display text-base text-gold tracking-wide">Premium Apartments</p>
+        <p className="font-display text-base text-gold tracking-wide">EIGENTUM SPACES</p>
+        <p className="mt-1 text-xs uppercase tracking-widest text-primary-foreground/60">Premium Apartments • Size 20 × 50 ft</p>
         <p className="mt-2">Ganesh Nagar, Sirsi, Bindayaka, Jaipur</p>
-        <p className="mt-3 text-xs text-primary-foreground/50">© {new Date().getFullYear()} • All Rights Reserved • RERA Verified Property</p>
+        <p className="mt-3 text-xs text-primary-foreground/50">© {new Date().getFullYear()} Eigentum Spaces • All Rights Reserved • RERA Verified Property</p>
       </footer>
 
       {/* Floating WhatsApp */}
