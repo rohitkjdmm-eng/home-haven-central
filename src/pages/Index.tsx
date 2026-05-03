@@ -61,7 +61,9 @@ const Index = () => {
     <main className="min-h-screen bg-background">
       {/* TOP ANNOUNCEMENT BAR */}
       <div className="bg-gradient-emerald text-primary-foreground text-xs md:text-sm py-2 px-4 text-center">
-        <span className="inline-flex items-center gap-2">
+        <span className="inline-flex items-center gap-2 flex-wrap justify-center">
+          <span className="font-display text-gold font-bold tracking-wider">EIGENTUM SPACES</span>
+          <span className="opacity-50">|</span>
           <span className="w-2 h-2 rounded-full bg-gold animate-blink" />
           🔥 Festive Offer Live — Only <span className="text-gold font-bold">3 Units Left</span> at Launch Price
         </span>
