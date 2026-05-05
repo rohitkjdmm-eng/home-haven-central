@@ -62,6 +62,7 @@ export const PropertyForm = ({ buttonLabel, variant = "primary", compact }: Prop
     }
     setLoading(true);
     try {
+      const dateStr = visitDate ? format(visitDate, "dd MMM yyyy") : "";
       await fetch("https://hook.eu1.make.com/owpby9cwk2bxojmitdujj9wgkmiu0doq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -77,6 +78,21 @@ export const PropertyForm = ({ buttonLabel, variant = "primary", compact }: Prop
           source: window.location.href,
         }),
       });
+
+      // WhatsApp message to owner with client booking details
+      const ownerNumber = "919079718117";
+      const waMessage =
+        `*Client Book Site Details*\n\n` +
+        `*Name:* ${name}\n` +
+        `*Mobile:* ${phone}\n` +
+        `*Buying For:* ${buyingFor}\n` +
+        `*Budget:* ${budget}\n` +
+        `*Timeline:* ${timeline}\n` +
+        `*Visit Date:* ${dateStr}\n` +
+        `*Visit Time:* ${visitTime}\n\n` +
+        `_Source: ${window.location.href}_`;
+      const waUrl = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(waMessage)}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
     } catch (err) {
       console.error("Webhook error", err);
     } finally {
