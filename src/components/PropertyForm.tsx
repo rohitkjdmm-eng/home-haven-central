@@ -61,44 +61,50 @@ export const PropertyForm = ({ buttonLabel, variant = "primary", compact }: Prop
       return;
     }
     setLoading(true);
+    const dateStr = visitDate ? format(visitDate, "dd MMM yyyy") : "";
+    const payload = {
+      name,
+      phone,
+      buyingFor,
+      budget,
+      timeline,
+      visitDate: visitDate ? format(visitDate, "yyyy-MM-dd") : "",
+      visitTime,
+      submittedAt: new Date().toISOString(),
+      source: window.location.href,
+    };
+
+    // Fire-and-forget webhook with keepalive so navigation isn't blocked
     try {
-      const dateStr = visitDate ? format(visitDate, "dd MMM yyyy") : "";
-      await fetch("https://hook.eu1.make.com/owpby9cwk2bxojmitdujj9wgkmiu0doq", {
+      fetch("https://hook.eu1.make.com/owpby9cwk2bxojmitdujj9wgkmiu0doq", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          phone,
-          buyingFor,
-          budget,
-          timeline,
-          visitDate: visitDate ? format(visitDate, "yyyy-MM-dd") : "",
-          visitTime,
-          submittedAt: new Date().toISOString(),
-          source: window.location.href,
-        }),
-      });
-
-      // WhatsApp message to owner with client booking details
-      const ownerNumber = "919079718117";
-      const waMessage =
-        `*Client Book Site Details*\n\n` +
-        `*Name:* ${name}\n` +
-        `*Mobile:* ${phone}\n` +
-        `*Buying For:* ${buyingFor}\n` +
-        `*Budget:* ${budget}\n` +
-        `*Timeline:* ${timeline}\n` +
-        `*Visit Date:* ${dateStr}\n` +
-        `*Visit Time:* ${visitTime}\n\n` +
-        `_Source: ${window.location.href}_`;
-      const waUrl = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(waMessage)}`;
-      window.open(waUrl, "_blank", "noopener,noreferrer");
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch((err) => console.error("Webhook error", err));
     } catch (err) {
       console.error("Webhook error", err);
-    } finally {
-      setLoading(false);
-      navigate("/thank-you");
     }
+
+    // Build WhatsApp message and stash details for the Thank You page
+    const ownerNumber = "919079718117";
+    const waMessage =
+      `*Client Book Site Details*\n\n` +
+      `*Name:* ${name}\n` +
+      `*Mobile:* ${phone}\n` +
+      `*Buying For:* ${buyingFor}\n` +
+      `*Budget:* ${budget}\n` +
+      `*Timeline:* ${timeline}\n` +
+      `*Visit Date:* ${dateStr}\n` +
+      `*Visit Time:* ${visitTime}\n\n` +
+      `_Source: ${window.location.href}_`;
+    const waUrl = `https://wa.me/${ownerNumber}?text=${encodeURIComponent(waMessage)}`;
+
+    try {
+      sessionStorage.setItem("lastEnquiry", JSON.stringify({ name, phone, visitDate: dateStr, visitTime, waUrl }));
+    } catch {}
+
+    navigate("/thank-you", { state: { name, phone, visitDate: dateStr, visitTime, waUrl } });
   };
 
   return (
