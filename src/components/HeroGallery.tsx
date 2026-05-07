@@ -35,7 +35,7 @@ export const HeroGallery = ({ slides }: HeroGalleryProps) => {
               key={s.src}
               src={s.src}
               alt={s.alt}
-              className="w-full h-[280px] sm:h-[380px] md:h-[480px] lg:h-[560px] object-cover shrink-0"
+              className="w-full h-[280px] sm:h-[380px] md:h-[480px] lg:h-[560px] object-contain sm:object-cover object-center bg-primary shrink-0"
               loading={i === 0 ? "eager" : "lazy"}
               fetchPriority={i === 0 ? "high" : "auto"}
               decoding="async"
